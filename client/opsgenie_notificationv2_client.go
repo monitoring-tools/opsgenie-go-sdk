@@ -64,3 +64,33 @@ func (cli *OpsGenieNotificationV2Client) Delete(req notificationv2.DeleteNotific
 
 	return &response, nil
 }
+
+func (cli *OpsGenieNotificationV2Client) Enable(req notificationv2.EnableNotificationRequest) (
+	*notificationv2.EnableNotificationResponse,
+	error,
+) {
+	req.Identifier.StatusAction = notificationv2.EnableStatusAction
+
+	var response notificationv2.EnableNotificationResponse
+	err := cli.sendPostRequest(&req, &response)
+	if err != nil {
+		return nil, err
+	}
+
+	return &response, nil
+}
+
+func (cli *OpsGenieNotificationV2Client) Disable(req notificationv2.DisableNotificationRequest) (
+	*notificationv2.DisableNotificationResponse,
+	error,
+) {
+	req.Identifier.StatusAction = notificationv2.DisableStatusAction
+
+	var response notificationv2.DisableNotificationResponse
+	err := cli.sendPostRequest(&req, &response)
+	if err != nil {
+		return nil, err
+	}
+
+	return &response, nil
+}

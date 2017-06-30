@@ -5,6 +5,16 @@ type DeleteNotificationResponse struct {
 	ActionResult
 }
 
+type EnableNotificationResponse struct {
+	ResponseMeta
+	ActionResult
+}
+
+type DisableNotificationResponse struct {
+	ResponseMeta
+	ActionResult
+}
+
 type ActionResult struct {
 	Result string `json:"result"`
 }

@@ -31,4 +31,7 @@ const (
 	SMSNotifyMethod = "sms"
 	EmailNotifyMethod = "email"
 	VoiceNotifyMethod = "voice"
+
+	EnableStatusAction = "enable"
+	DisableStatusAction = "disable"
 )
