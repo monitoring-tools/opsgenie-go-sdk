@@ -4,15 +4,14 @@ import (
 	"fmt"
 
 	ogcli "github.com/opsgenie/opsgenie-go-sdk/client"
-	//"github.com/opsgenie/opsgenie-go-sdk/_samples/constants"
+	"github.com/opsgenie/opsgenie-go-sdk/_samples/constants"
 	"github.com/opsgenie/opsgenie-go-sdk/notificationv2"
 )
 
 func main() {
 
 	cli := new(ogcli.OpsGenieClient)
-	//cli.SetAPIKey(constants.APIKey)
-	cli.SetAPIKey("f17414c6-4c4b-42f3-9e61-be7c3c65685a")
+	cli.SetAPIKey(constants.APIKey)
 
 	notificationCli, _ := cli.Notificationv2()
 
