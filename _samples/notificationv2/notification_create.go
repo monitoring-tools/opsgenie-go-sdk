@@ -76,6 +76,11 @@ func main() {
 	if err != nil {
 		fmt.Println(err.Error())
 	} else {
-		fmt.Printf("ID: %s, Name: %s, Enabled: %t\n", response.ID, response.Name, response.Enabled)
+		fmt.Printf(
+			"ID: %s, Name: %s, Enabled: %t\n",
+			response.Notification.ID,
+			response.Notification.Name,
+			response.Notification.Enabled,
+		)
 	}
 }
