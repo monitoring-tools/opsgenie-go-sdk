@@ -52,6 +52,19 @@ func (cli *OpsGenieNotificationV2Client) Create(req notificationv2.CreateNotific
 	return &response, nil
 }
 
+func (cli *OpsGenieNotificationV2Client) Update(req notificationv2.UpdateNotificationRequest) (
+	*notificationv2.UpdateNotificationResponse,
+	error,
+) {
+	var response notificationv2.UpdateNotificationResponse
+	err := cli.sendPatchRequest(&req, &response)
+	if err != nil {
+		return nil, err
+	}
+
+	return &response, nil
+}
+
 func (cli *OpsGenieNotificationV2Client) Delete(req notificationv2.DeleteNotificationRequest) (
 	*notificationv2.DeleteNotificationResponse,
 	error,

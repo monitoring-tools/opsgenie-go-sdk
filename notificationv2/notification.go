@@ -20,6 +20,11 @@ type ListNotificationResponse struct {
 }
 
 type CreateNotificationResponse struct {
-	Notification Notification `json:"data"`
 	ResponseMeta
+	Notification Notification `json:"data"`
+}
+
+type UpdateNotificationResponse struct {
+	ResponseMeta
+	Notification Notification `json:"data"`
 }
