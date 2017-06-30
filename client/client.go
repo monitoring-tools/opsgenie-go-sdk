@@ -291,6 +291,19 @@ func (cli *OpsGenieClient) User() (*OpsGenieUserClient, error) {
 	return userClient, nil
 }
 
+func (cli *OpsGenieClient) Notificationv2() (*OpsGenieNotificationV2Client, error) {
+	cli.makeHTTPTransportSettings()
+
+	notificationClient := new(OpsGenieNotificationV2Client)
+	notificationClient.SetOpsGenieClient(*cli)
+
+	if cli.opsGenieAPIURL == "" {
+		notificationClient.SetOpsGenieAPIUrl(endpointURL)
+	}
+
+	return notificationClient, nil
+}
+
 // buildCommonRequestProps is an internal method to set common properties of requests that will send to OpsGenie.
 func (cli *OpsGenieClient) buildCommonRequestProps() goreq.Request {
 	if cli.httpTransportSettings == nil {
