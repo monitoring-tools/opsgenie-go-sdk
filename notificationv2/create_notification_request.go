@@ -1,5 +1,6 @@
 package notificationv2
 
+// CreateNotificationRequest is a struct of request to crate new notification rule.
 type CreateNotificationRequest struct {
 	*Identifier
 	ApiKey           string
@@ -15,6 +16,7 @@ type CreateNotificationRequest struct {
 	Enabled          bool `json:"enabled"`
 }
 
+// GetApiKey returns api key.
 func (r *CreateNotificationRequest) GetApiKey() string {
 	return r.ApiKey
 }

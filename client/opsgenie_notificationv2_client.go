@@ -4,13 +4,28 @@ import (
 	"github.com/opsgenie/opsgenie-go-sdk/notificationv2"
 )
 
+// OpsGenieNotificationV2Client is the data type to make Notification rule API requests.
 type OpsGenieNotificationV2Client struct {
 	RestClient
 }
 
-// SetOpsGenieClient sets the embedded OpsGenieClient type of the OpsGenieTeamClient.
+// SetOpsGenieClient sets the embedded OpsGenieClient type of the OpsGenieNotificationV2Client.
 func (cli *OpsGenieNotificationV2Client) SetOpsGenieClient(ogCli OpsGenieClient) {
 	cli.OpsGenieClient = ogCli
+}
+
+// Creates method creates a notification rule at OpsGenie.
+func (cli *OpsGenieNotificationV2Client) Create(req notificationv2.CreateNotificationRequest) (
+	*notificationv2.CreateNotificationResponse,
+	error,
+) {
+	var response notificationv2.CreateNotificationResponse
+	err := cli.sendPostRequest(&req, &response)
+	if err != nil {
+		return nil, err
+	}
+
+	return &response, nil
 }
 
 func (cli *OpsGenieNotificationV2Client) Get(req notificationv2.GetNotificationRequest) (
@@ -32,19 +47,6 @@ func (cli *OpsGenieNotificationV2Client) List(req notificationv2.ListNotificatio
 ) {
 	var response notificationv2.ListNotificationResponse
 	err := cli.sendGetRequest(&req, &response)
-	if err != nil {
-		return nil, err
-	}
-
-	return &response, nil
-}
-
-func (cli *OpsGenieNotificationV2Client) Create(req notificationv2.CreateNotificationRequest) (
-	*notificationv2.CreateNotificationResponse,
-	error,
-) {
-	var response notificationv2.CreateNotificationResponse
-	err := cli.sendPostRequest(&req, &response)
 	if err != nil {
 		return nil, err
 	}
