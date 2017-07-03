@@ -1,5 +1,6 @@
 package notificationv2
 
+// Notification describes alert data, which is contained in a response.
 type Notification struct {
 	ID               string `json:"id,omitempty"`
 	Name             string `json:"name,omitempty"`
@@ -12,19 +13,4 @@ type Notification struct {
 	Enabled          bool `json:"enabled,omitempty"`
 	Repeat           Repeat `json:"repeat,omitempty"`
 	TimeRestriction  TimeRestriction `json:"timeRestriction,omitempty"`
-}
-
-type ListNotificationResponse struct {
-	ResponseMeta
-	Notifications []Notification `json:"data"`
-}
-
-type CreateNotificationResponse struct {
-	ResponseMeta
-	Notification Notification `json:"data"`
-}
-
-type UpdateNotificationResponse struct {
-	ResponseMeta
-	Notification Notification `json:"data"`
 }
