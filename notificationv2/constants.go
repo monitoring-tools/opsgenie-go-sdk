@@ -20,21 +20,21 @@ const (
 	TimeOfDayTimeRestriction           = "time-of-day"
 	WeekendAndTimeOfDayTimeRestriction = "weekday-and-time-of-day"
 
-	Monday = "monday"
-	Tuesday = "tuesday"
+	Monday    = "monday"
+	Tuesday   = "tuesday"
 	Wednesday = "wednesday"
-	Thursday = "thursday"
-	Friday= "friday"
-	Saturday = "saturday"
-	Sunday = "sunday"
+	Thursday  = "thursday"
+	Friday    = "friday"
+	Saturday  = "saturday"
+	Sunday    = "sunday"
 
 	Minutes = "minutes"
 
-	SMSNotifyMethod = "sms"
-	EmailNotifyMethod = "email"
-	VoiceNotifyMethod = "voice"
+	SMSNotifyMethod    = "sms"
+	EmailNotifyMethod  = "email"
+	VoiceNotifyMethod  = "voice"
 	MobileNotifyMethod = "mobile"
 
-	EnableStatusAction = "enable"
+	EnableStatusAction  = "enable"
 	DisableStatusAction = "disable"
 )

@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 
-	ogcli "github.com/opsgenie/opsgenie-go-sdk/client"
 	"github.com/opsgenie/opsgenie-go-sdk/_samples/constants"
+	ogcli "github.com/opsgenie/opsgenie-go-sdk/client"
 	"github.com/opsgenie/opsgenie-go-sdk/notificationv2"
 )
 
@@ -23,10 +23,10 @@ func main() {
 		Type: "match-all-conditions",
 		Conditions: []notificationv2.Condition{
 			{
-				Field: "extra-properties",
-				Key: "system",
-				Not: true,
-				Operation: "equals",
+				Field:         "extra-properties",
+				Key:           "system",
+				Not:           true,
+				Operation:     "equals",
 				ExpectedValue: "mysql",
 			},
 		},
@@ -50,11 +50,11 @@ func main() {
 		{
 			SendAfter: notificationv2.SendAfter{
 				TimeAmount: 1,
-				TimeUnit: notificationv2.Minutes,
+				TimeUnit:   notificationv2.Minutes,
 			},
 			Contact: notificationv2.Contact{
 				Method: notificationv2.EmailNotifyMethod,
-				To: "vlamug@gmail.com",
+				To:     "vlamug@gmail.com",
 			},
 			Enabled: true,
 		},
@@ -63,15 +63,15 @@ func main() {
 	repeat := notificationv2.Repeat{Enabled: false}
 
 	response, err := notificationCli.Create(notificationv2.CreateNotificationRequest{
-		Identifier: identifier,
-		Name: "Test create-alert",
-		ActionType: notificationv2.CreateAlertActionType,
-		Criteria: criteria,
+		Identifier:      identifier,
+		Name:            "Test create-alert",
+		ActionType:      notificationv2.CreateAlertActionType,
+		Criteria:        criteria,
 		TimeRestriction: timeRestriction,
-		Order: 1,
-		Steps: steps,
-		Repeat: repeat,
-		Enabled: true,
+		Order:           1,
+		Steps:           steps,
+		Repeat:          repeat,
+		Enabled:         true,
 	})
 	if err != nil {
 		fmt.Println(err.Error())

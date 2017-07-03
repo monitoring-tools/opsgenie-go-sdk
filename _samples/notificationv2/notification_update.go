@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 
-	ogcli "github.com/opsgenie/opsgenie-go-sdk/client"
 	"github.com/opsgenie/opsgenie-go-sdk/_samples/constants"
+	ogcli "github.com/opsgenie/opsgenie-go-sdk/client"
 	"github.com/opsgenie/opsgenie-go-sdk/notificationv2"
 )
 
@@ -23,10 +23,10 @@ func main() {
 		Type: "match-all-conditions",
 		Conditions: []notificationv2.Condition{
 			{
-				Field: "extra-properties",
-				Key: "system",
-				Not: true,
-				Operation: "equals",
+				Field:         "extra-properties",
+				Key:           "system",
+				Not:           true,
+				Operation:     "equals",
 				ExpectedValue: "mysql",
 			},
 		},
@@ -47,12 +47,12 @@ func main() {
 	}
 
 	response, err := notificationCli.Update(notificationv2.UpdateNotificationRequest{
-		Identifier: identifier,
-		Name: "Test create-alert(changed)",
-		Criteria: criteria,
+		Identifier:      identifier,
+		Name:            "Test create-alert(changed)",
+		Criteria:        criteria,
 		TimeRestriction: timeRestriction,
-		Enabled: true,
-		Order: 2,
+		Enabled:         true,
+		Order:           2,
 	})
 	if err != nil {
 		fmt.Println(err.Error())

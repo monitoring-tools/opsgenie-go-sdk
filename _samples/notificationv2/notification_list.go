@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 
-	ogcli "github.com/opsgenie/opsgenie-go-sdk/client"
 	"github.com/opsgenie/opsgenie-go-sdk/_samples/constants"
+	ogcli "github.com/opsgenie/opsgenie-go-sdk/client"
 	"github.com/opsgenie/opsgenie-go-sdk/notificationv2"
 )
 
@@ -23,7 +23,7 @@ func main() {
 		fmt.Println(err.Error())
 	} else {
 		for i, notification := range response.Notifications {
-			fmt.Printf("%d. %s\n", i, notification.Name )
+			fmt.Printf("%d. %s\n", i, notification.Name)
 		}
 	}
 }

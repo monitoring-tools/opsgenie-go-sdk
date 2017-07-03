@@ -3,9 +3,9 @@ package main
 import (
 	"fmt"
 
+	"github.com/opsgenie/opsgenie-go-sdk/_samples/constants"
 	ogcli "github.com/opsgenie/opsgenie-go-sdk/client"
 	"github.com/opsgenie/opsgenie-go-sdk/notificationv2"
-	"github.com/opsgenie/opsgenie-go-sdk/_samples/constants"
 )
 
 func main() {
