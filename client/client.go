@@ -291,6 +291,20 @@ func (cli *OpsGenieClient) User() (*OpsGenieUserClient, error) {
 	return userClient, nil
 }
 
+// UserV2 instantiates a new OpsGenieUserV2Client.
+func (cli *OpsGenieClient) UserV2() (*OpsGenieUserV2Client, error) {
+	cli.makeHTTPTransportSettings()
+
+	userClient := new(OpsGenieUserV2Client)
+	userClient.SetOpsGenieClient(*cli)
+
+	if cli.opsGenieAPIURL == "" {
+		userClient.SetOpsGenieAPIUrl(endpointURL)
+	}
+
+	return userClient, nil
+}
+
 func (cli *OpsGenieClient) Notificationv2() (*OpsGenieNotificationV2Client, error) {
 	cli.makeHTTPTransportSettings()
 
