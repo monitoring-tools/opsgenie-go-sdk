@@ -37,4 +37,8 @@ const (
 
 	EnableStatusAction  = "enable"
 	DisableStatusAction = "disable"
+
+	ConditionOperationEquals = "equals"
+
+	ExtraPropertiesFieldType = "extra-properties"
 )
