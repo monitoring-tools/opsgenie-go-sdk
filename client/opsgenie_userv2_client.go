@@ -58,3 +58,13 @@ func (cli *OpsGenieUserV2Client) Delete(req userv2.DeleteUserRequest) (*userv2.D
 	}
 	return &response, nil
 }
+
+func (cli *OpsGenieUserV2Client) ListEscalations(req userv2.ListUserEscalationRequest) (*userv2.ListUserEscalationResponse, error) {
+	var response userv2.ListUserEscalationResponse
+	req.Entity = userv2.EscalationsEntity
+	err := cli.sendGetRequest(&req, &response)
+	if err != nil {
+		return nil, err
+	}
+	return &response, nil
+}

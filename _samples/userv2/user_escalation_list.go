@@ -14,14 +14,16 @@ func main() {
 
 	userCli, _ := cli.UserV2()
 
-	request := userv2.DeleteUserRequest{
-		Identifier: &userv2.Identifier{UserName:"user-name@test.com"},
+	request := userv2.ListUserEscalationRequest{
+		Identifier: &userv2.Identifier{UserName:"22275390-e95b-47df-8c13-6edc469c0b26"},
 	}
 
-	response, err := userCli.Delete(request)
+	response, err := userCli.ListEscalations(request)
 	if err != nil {
 		fmt.Println(err)
 	} else {
-		fmt.Println(response)
+		for _, escalation := range response.Escalations {
+			fmt.Println(escalation)
+		}
 	}
 }
