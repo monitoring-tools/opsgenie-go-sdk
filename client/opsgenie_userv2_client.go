@@ -59,8 +59,8 @@ func (cli *OpsGenieUserV2Client) Delete(req userv2.DeleteUserRequest) (*userv2.D
 	return &response, nil
 }
 
-func (cli *OpsGenieUserV2Client) ListEscalations(req userv2.ListUserEscalationRequest) (*userv2.ListUserEscalationResponse, error) {
-	var response userv2.ListUserEscalationResponse
+func (cli *OpsGenieUserV2Client) ListEscalations(req userv2.ListUserEscalationsRequest) (*userv2.ListUserEscalationsResponse, error) {
+	var response userv2.ListUserEscalationsResponse
 	req.Entity = userv2.EscalationsEntity
 	err := cli.sendGetRequest(&req, &response)
 	if err != nil {
@@ -82,6 +82,16 @@ func (cli *OpsGenieUserV2Client) ListTeams(req userv2.ListUserTeamsRequest) (*us
 func (cli *OpsGenieUserV2Client) ListForwardingRules(req userv2.ListUserForwardingRulesRequest) (*userv2.ListUserForwardingRulesResponse, error) {
 	var response userv2.ListUserForwardingRulesResponse
 	req.Entity = userv2.ForwardingRulesEntity
+	err := cli.sendGetRequest(&req, &response)
+	if err != nil {
+		return nil, err
+	}
+	return &response, nil
+}
+
+func (cli *OpsGenieUserV2Client) ListSchedules(req userv2.ListUserSchedulesRequest) (*userv2.ListUserSchedulesResponse, error) {
+	var response userv2.ListUserSchedulesResponse
+	req.Entity = userv2.SchedulesEntity
 	err := cli.sendGetRequest(&req, &response)
 	if err != nil {
 		return nil, err

@@ -1,6 +1,6 @@
 package userv2
 
-type ListUserEscalationResponse struct {
+type ListUserEscalationsResponse struct {
 	Escalations []Escalation `json:"data,omitempty"`
 	*ResponseMeta
 }
