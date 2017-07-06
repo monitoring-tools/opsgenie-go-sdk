@@ -3,10 +3,11 @@ package userv2
 import "net/url"
 
 const (
-	// OwnerRole is the text value of 
-	OwnerRole = "owner"
-	AdminRole = "admin"
-	UserRole  = "user"
+	// OwnerRole is the text value of
+	OwnerRole       = "owner"
+	AdminRole       = "admin"
+	UserRole        = "user"
+	FirefighterRole = "firefighter"
 )
 
 type CreateUserRequest struct {
