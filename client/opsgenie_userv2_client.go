@@ -68,3 +68,13 @@ func (cli *OpsGenieUserV2Client) ListEscalations(req userv2.ListUserEscalationRe
 	}
 	return &response, nil
 }
+
+func (cli *OpsGenieUserV2Client) ListTeams(req userv2.ListUserTeamsRequest) (*userv2.ListUserTeamsResponse, error) {
+	var response userv2.ListUserTeamsResponse
+	req.Entity = userv2.TeamsEntity
+	err := cli.sendGetRequest(&req, &response)
+	if err != nil {
+		return nil, err
+	}
+	return &response, nil
+}
