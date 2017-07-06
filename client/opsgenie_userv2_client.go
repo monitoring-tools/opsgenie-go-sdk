@@ -78,3 +78,13 @@ func (cli *OpsGenieUserV2Client) ListTeams(req userv2.ListUserTeamsRequest) (*us
 	}
 	return &response, nil
 }
+
+func (cli *OpsGenieUserV2Client) ListForwardingRules(req userv2.ListUserForwardingRulesRequest) (*userv2.ListUserForwardingRulesResponse, error) {
+	var response userv2.ListUserForwardingRulesResponse
+	req.Entity = userv2.ForwardingRulesEntity
+	err := cli.sendGetRequest(&req, &response)
+	if err != nil {
+		return nil, err
+	}
+	return &response, nil
+}
