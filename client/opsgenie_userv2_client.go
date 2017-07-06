@@ -49,3 +49,12 @@ func (cli *OpsGenieUserV2Client) Update(req userv2.UpdateUserRequest) (*userv2.U
 	}
 	return &response, nil
 }
+
+func (cli *OpsGenieUserV2Client) Delete(req userv2.DeleteUserRequest) (*userv2.DeleteUserResponse, error) {
+	var response userv2.DeleteUserResponse
+	err := cli.sendDeleteRequest(&req, &response)
+	if err != nil {
+		return nil, err
+	}
+	return &response, nil
+}

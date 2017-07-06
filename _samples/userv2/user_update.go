@@ -3,15 +3,14 @@ package main
 import (
 	"fmt"
 
-	//"github.com/opsgenie/opsgenie-go-sdk/_samples/constants"
+	"github.com/opsgenie/opsgenie-go-sdk/_samples/constants"
 	"github.com/opsgenie/opsgenie-go-sdk/userv2"
 	ogcli "github.com/opsgenie/opsgenie-go-sdk/client"
 )
 
 func main() {
 	cli := new(ogcli.OpsGenieClient)
-	//cli.SetAPIKey(constants.APIKey)
-	cli.SetAPIKey("f17414c6-4c4b-42f3-9e61-be7c3c65685a")
+	cli.SetAPIKey(constants.APIKey)
 
 	userCli, _ := cli.UserV2()
 
@@ -21,13 +20,13 @@ func main() {
 			Expand: userv2.ContactExpandableField,
 		},
 		FullName: "Lex Luthor",
-		Role: userv2.Role{Name:userv2.AdminRole},
+		Role: &userv2.Role{Name:userv2.AdminRole},
 		SkypeUsername: "lex.luthor",
-		Tags: userv2.Tags{"updated"},
-		Details: userv2.Details{"test": []string{"updated"}},
+		Tags: &userv2.Tags{"updated"},
+		Details: &userv2.Details{"test": []string{"updated"}},
 		Locale: "de_CH",
 		Timezone: "US/Arizona",
-		UserAddress: userv2.UserAddress{
+		UserAddress: &userv2.UserAddress{
 			City: "Phoenix",
 			State: "Arizona",
 		},
