@@ -14,7 +14,7 @@ func main() {
 
 	userCli, _ := cli.UserV2()
 
-	request := userv2.ListUserRequest{
+	request := userv2.ListUsersRequest{
 		Limit: 10,
 		Offset: 0,
 		Sort: userv2.UsernameSortField,

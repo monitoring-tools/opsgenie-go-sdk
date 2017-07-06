@@ -15,4 +15,5 @@ type User struct {
 	CreatedAt   time.Time `json:"createdAt,omitempty"`
 	Details     Details `json:"details"`
 	Tags        Tags `json:"tags"`
+	UserContacts []UserContact `json:"userContacts"`
 }

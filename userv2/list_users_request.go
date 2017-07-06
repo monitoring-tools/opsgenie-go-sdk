@@ -25,7 +25,7 @@ const (
 	CreatedAtQueryField   = "createdAt"
 )
 
-type ListUserRequest struct {
+type ListUsersRequest struct {
 	Limit  int
 	Offset int
 	Sort   string
@@ -34,7 +34,7 @@ type ListUserRequest struct {
 	ApiKey string
 }
 
-func (request *ListUserRequest) GenerateUrl() (string, url.Values, error) {
+func (request *ListUsersRequest) GenerateUrl() (string, url.Values, error) {
 	baseUrl := "/v2/users/"
 
 	params := url.Values{}
@@ -82,6 +82,6 @@ func (request *ListUserRequest) GenerateUrl() (string, url.Values, error) {
 }
 
 // GetApiKey returns api key.
-func (r *ListUserRequest) GetApiKey() string {
+func (r *ListUsersRequest) GetApiKey() string {
 	return r.ApiKey
 }

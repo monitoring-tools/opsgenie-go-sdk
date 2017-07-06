@@ -14,8 +14,8 @@ func (cli *OpsGenieUserV2Client) SetOpsGenieClient(ogCli OpsGenieClient) {
 }
 
 // List method retrieves the list of users from OpsGenie
-func (cli *OpsGenieUserV2Client) List(req userv2.ListUserRequest) (*userv2.ListUserResponse, error) {
-	var response userv2.ListUserResponse
+func (cli *OpsGenieUserV2Client) List(req userv2.ListUsersRequest) (*userv2.ListUsersResponse, error) {
+	var response userv2.ListUsersResponse
 	err := cli.sendGetRequest(&req, &response)
 	if err != nil {
 		return nil, err
@@ -43,7 +43,7 @@ func (cli *OpsGenieUserV2Client) Get(req userv2.GetUserRequest) (*userv2.GetUser
 
 func (cli *OpsGenieUserV2Client) Update(req userv2.UpdateUserRequest) (*userv2.UpdateUserResponse, error) {
 	var response userv2.UpdateUserResponse
-	err := cli.sendGetRequest(&req, &response)
+	err := cli.sendPatchRequest(&req, &response)
 	if err != nil {
 		return nil, err
 	}

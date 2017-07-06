@@ -16,7 +16,7 @@ type Identifier struct {
 }
 
 func (request *Identifier) GenerateUrl() (string, url.Values, error) {
-	baseUrl := "/v2/users/"
+	baseUrl := "/v2/users"
 
 	if len(request.ID) > 0 {
 		baseUrl += "/" + request.ID
@@ -35,5 +35,5 @@ func (request *Identifier) GenerateUrl() (string, url.Values, error) {
 		}
 	}
 
-	return baseUrl, nil, nil
+	return baseUrl, params, nil
 }

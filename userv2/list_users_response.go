@@ -1,6 +1,6 @@
 package userv2
 
-type ListUserResponse struct {
+type ListUsersResponse struct {
 	Users []User `json:"data"`
 	*ResponseMeta
 }
