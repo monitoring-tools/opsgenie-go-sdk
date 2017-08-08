@@ -20,7 +20,7 @@ func main() {
 	}
 
 	criteria := notificationv2.Criteria{
-		Type: "match-all-conditions",
+		Type: notificationv2.MatchAllConditionsType,
 		Conditions: []notificationv2.Condition{
 			{
 				Field:         "extra-properties",

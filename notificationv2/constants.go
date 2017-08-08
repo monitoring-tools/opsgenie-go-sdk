@@ -11,15 +11,17 @@ const (
 	ScheduleEndActionType         = "schedule-end"
 	IncomingCallRoutingActionType = "incoming-call-routing"
 
-	// List of Time Periods that notification for schedule start/end will be sent.
+	// List of time periods that notification for schedule start/end will be sent.
 	JustBeforeNotificationTime        = "just-before"
 	FifteenMinutesAgoNotificationTime = "15-minutes-ago"
 	OneHourAgoNotificationTime        = "1-hour-ago"
 	OneDayAgoNotificationTime         = "1-day-ago"
 
+	// List of time restrictions within alerts will be sent.
 	TimeOfDayTimeRestriction           = "time-of-day"
 	WeekendAndTimeOfDayTimeRestriction = "weekday-and-time-of-day"
 
+	// The list of week days. These strings are used for generate time restrictions.
 	Monday    = "monday"
 	Tuesday   = "tuesday"
 	Wednesday = "wednesday"
@@ -28,17 +30,37 @@ const (
 	Saturday  = "saturday"
 	Sunday    = "sunday"
 
+	// The text representation of word "minutes".
 	Minutes = "minutes"
 
+	// The list of notification types.
 	SMSNotifyMethod    = "sms"
 	EmailNotifyMethod  = "email"
 	VoiceNotifyMethod  = "voice"
 	MobileNotifyMethod = "mobile"
 
+	// The list of statuses, which are used for enable/disable notification rules.
 	EnableStatusAction  = "enable"
 	DisableStatusAction = "disable"
 
-	ConditionOperationEquals = "equals"
+	// The list of matches which are used for creating criteria of notification.
+	MatchAllType = "match-all"
+	MatchAnyConditionsType = "match-any-condition"
+	MatchAllConditionsType = "match-all-conditions"
 
-	ExtraPropertiesFieldType = "extra-properties"
+	// The list of condition operation, which are used for build notification criteria.
+	MatchesConditionOperation = "matches"
+	EqualsConditionOperation  = "equals"
+	IsEmptyConditionOperation  = "is-empty"
+
+	// The list of fields, which are used for build filter of alerts.
+	ActionsField = "actions"
+	AliasField = "alias"
+	DescriptionField = "description"
+	EntityField = "entity"
+	MessageField = "message"
+	RecipientsField = "recipients"
+	SourceField = "source"
+	TeamsField = "teams"
+	ExtraPropertiesField = "extra-properties"
 )
