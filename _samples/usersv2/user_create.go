@@ -37,6 +37,6 @@ func main() {
 	if err != nil {
 		fmt.Println(err)
 	} else {
-		fmt.Println(response)
+		fmt.Printf("Id: %s, username: %#v\n", response.Data.ID, response.Data.Name)
 	}
 }

@@ -9,7 +9,6 @@ import (
 )
 
 func main() {
-
 	cli := new(ogcli.OpsGenieClient)
 	cli.SetAPIKey(constants.APIKey)
 
