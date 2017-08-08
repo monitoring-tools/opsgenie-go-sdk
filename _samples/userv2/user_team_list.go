@@ -4,8 +4,8 @@ import (
 	"fmt"
 
 	"github.com/opsgenie/opsgenie-go-sdk/_samples/constants"
-	"github.com/opsgenie/opsgenie-go-sdk/userv2"
 	ogcli "github.com/opsgenie/opsgenie-go-sdk/client"
+	"github.com/opsgenie/opsgenie-go-sdk/userv2"
 )
 
 func main() {
@@ -16,7 +16,7 @@ func main() {
 	userCli, _ := cli.UserV2()
 
 	request := userv2.ListUserTeamsRequest{
-		Identifier: &userv2.Identifier{UserName:"22275390-e95b-47df-8c13-6edc469c0b26"},
+		Identifier: &userv2.Identifier{UserName: "22275390-e95b-47df-8c13-6edc469c0b26"},
 	}
 
 	response, err := userCli.ListTeams(request)

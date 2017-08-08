@@ -6,7 +6,7 @@ type ListUserSchedulesResponse struct {
 }
 
 type Schedule struct {
-	ID string `json:"id,omitempty"`
-	Name string `json:"name,omitempty"`
-	Enabled bool `json:"enabled,omitempty"`
+	ID      string `json:"id,omitempty"`
+	Name    string `json:"name,omitempty"`
+	Enabled bool   `json:"enabled,omitempty"`
 }

@@ -1,25 +1,16 @@
 package userv2
 
 import (
-	"net/url"
 	"errors"
 	"fmt"
-)
-
-const (
-	ContactExpandableField = "contact"
-
-	EscalationsEntity = "escalations"
-	TeamsEntity = "teams"
-	ForwardingRulesEntity = "forwarding-rules"
-	SchedulesEntity = "schedules"
+	"net/url"
 )
 
 type Identifier struct {
-	ID string `json:"-"`
+	ID       string `json:"-"`
 	UserName string `json:"-"`
-	Entity string `json:"-"`
-	Expand string `json:"-"`
+	Entity   string `json:"-"`
+	Expand   string `json:"-"`
 }
 
 func (request *Identifier) GenerateUrl() (string, url.Values, error) {

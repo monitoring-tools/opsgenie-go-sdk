@@ -23,6 +23,7 @@ func (cli *OpsGenieUserV2Client) List(req userv2.ListUsersRequest) (*userv2.List
 	return &response, nil
 }
 
+// Create method creates new user at OpsGenie
 func (cli *OpsGenieUserV2Client) Create(req userv2.CreateUserRequest) (*userv2.CreateUserResponse, error) {
 	var response userv2.CreateUserResponse
 	err := cli.sendPostRequest(&req, &response)
@@ -32,6 +33,7 @@ func (cli *OpsGenieUserV2Client) Create(req userv2.CreateUserRequest) (*userv2.C
 	return &response, nil
 }
 
+// Get method returns user
 func (cli *OpsGenieUserV2Client) Get(req userv2.GetUserRequest) (*userv2.GetUserResponse, error) {
 	var response userv2.GetUserResponse
 	err := cli.sendGetRequest(&req, &response)
@@ -41,6 +43,7 @@ func (cli *OpsGenieUserV2Client) Get(req userv2.GetUserRequest) (*userv2.GetUser
 	return &response, nil
 }
 
+// Update method updates data of user
 func (cli *OpsGenieUserV2Client) Update(req userv2.UpdateUserRequest) (*userv2.UpdateUserResponse, error) {
 	var response userv2.UpdateUserResponse
 	err := cli.sendPatchRequest(&req, &response)
@@ -50,6 +53,7 @@ func (cli *OpsGenieUserV2Client) Update(req userv2.UpdateUserRequest) (*userv2.U
 	return &response, nil
 }
 
+// Delete deletes user
 func (cli *OpsGenieUserV2Client) Delete(req userv2.DeleteUserRequest) (*userv2.DeleteUserResponse, error) {
 	var response userv2.DeleteUserResponse
 	err := cli.sendDeleteRequest(&req, &response)
@@ -59,6 +63,7 @@ func (cli *OpsGenieUserV2Client) Delete(req userv2.DeleteUserRequest) (*userv2.D
 	return &response, nil
 }
 
+// ListEscalations returns list of user escalations
 func (cli *OpsGenieUserV2Client) ListEscalations(req userv2.ListUserEscalationsRequest) (*userv2.ListUserEscalationsResponse, error) {
 	var response userv2.ListUserEscalationsResponse
 	req.Entity = userv2.EscalationsEntity
@@ -69,6 +74,7 @@ func (cli *OpsGenieUserV2Client) ListEscalations(req userv2.ListUserEscalationsR
 	return &response, nil
 }
 
+// ListTeams returns list of user teams
 func (cli *OpsGenieUserV2Client) ListTeams(req userv2.ListUserTeamsRequest) (*userv2.ListUserTeamsResponse, error) {
 	var response userv2.ListUserTeamsResponse
 	req.Entity = userv2.TeamsEntity
@@ -79,6 +85,7 @@ func (cli *OpsGenieUserV2Client) ListTeams(req userv2.ListUserTeamsRequest) (*us
 	return &response, nil
 }
 
+// ListForwardingRules return list of user forwarding rules
 func (cli *OpsGenieUserV2Client) ListForwardingRules(req userv2.ListUserForwardingRulesRequest) (*userv2.ListUserForwardingRulesResponse, error) {
 	var response userv2.ListUserForwardingRulesResponse
 	req.Entity = userv2.ForwardingRulesEntity
@@ -89,6 +96,7 @@ func (cli *OpsGenieUserV2Client) ListForwardingRules(req userv2.ListUserForwardi
 	return &response, nil
 }
 
+// ListSchedules returns list of user schedules
 func (cli *OpsGenieUserV2Client) ListSchedules(req userv2.ListUserSchedulesRequest) (*userv2.ListUserSchedulesResponse, error) {
 	var response userv2.ListUserSchedulesResponse
 	req.Entity = userv2.SchedulesEntity

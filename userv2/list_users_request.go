@@ -1,9 +1,9 @@
 package userv2
 
 import (
+	"errors"
 	"net/url"
 	"strconv"
-	"errors"
 )
 
 const (

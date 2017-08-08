@@ -4,8 +4,8 @@ import (
 	"fmt"
 
 	"github.com/opsgenie/opsgenie-go-sdk/_samples/constants"
-	"github.com/opsgenie/opsgenie-go-sdk/userv2"
 	ogcli "github.com/opsgenie/opsgenie-go-sdk/client"
+	"github.com/opsgenie/opsgenie-go-sdk/userv2"
 )
 
 func main() {
@@ -15,7 +15,7 @@ func main() {
 	userCli, _ := cli.UserV2()
 
 	request := userv2.DeleteUserRequest{
-		Identifier: &userv2.Identifier{UserName:"user-name@test.com"},
+		Identifier: &userv2.Identifier{UserName: "user-name@test.com"},
 	}
 
 	response, err := userCli.Delete(request)

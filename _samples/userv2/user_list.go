@@ -4,8 +4,8 @@ import (
 	"fmt"
 
 	"github.com/opsgenie/opsgenie-go-sdk/_samples/constants"
-	"github.com/opsgenie/opsgenie-go-sdk/userv2"
 	ogcli "github.com/opsgenie/opsgenie-go-sdk/client"
+	"github.com/opsgenie/opsgenie-go-sdk/userv2"
 )
 
 func main() {
@@ -15,10 +15,10 @@ func main() {
 	userCli, _ := cli.UserV2()
 
 	request := userv2.ListUsersRequest{
-		Limit: 10,
+		Limit:  10,
 		Offset: 0,
-		Sort: userv2.UsernameSortField,
-		Order: userv2.AscSortType,
+		Sort:   userv2.UsernameSortField,
+		Order:  userv2.AscSortType,
 		Query: map[string]string{
 			userv2.UsernameQueryField: "John",
 		},

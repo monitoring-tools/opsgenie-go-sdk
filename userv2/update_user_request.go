@@ -2,14 +2,14 @@ package userv2
 
 type UpdateUserRequest struct {
 	*Identifier
-	FullName      string `json:"fullName,omitempty"`
-	Role          *Role `json:"role,omitempty"`
-	SkypeUsername string `json:"skypeUsername,omitempty"`
+	FullName      string       `json:"fullName,omitempty"`
+	Role          *Role        `json:"role,omitempty"`
+	SkypeUsername string       `json:"skypeUsername,omitempty"`
 	UserAddress   *UserAddress `json:"userAddress,omitempty"`
-	Tags          *Tags `json:"tags,omitempty"`
-	Details       *Details `json:"details,omitempty"`
-	Timezone      string `json:"timezone,omitempty"`
-	Locale        string `json:"locale,omitempty"`
+	Tags          *Tags        `json:"tags,omitempty"`
+	Details       *Details     `json:"details,omitempty"`
+	Timezone      string       `json:"timezone,omitempty"`
+	Locale        string       `json:"locale,omitempty"`
 	ApiKey        string
 }
 

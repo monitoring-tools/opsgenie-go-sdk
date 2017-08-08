@@ -4,8 +4,8 @@ import (
 	"fmt"
 
 	"github.com/opsgenie/opsgenie-go-sdk/_samples/constants"
-	"github.com/opsgenie/opsgenie-go-sdk/userv2"
 	ogcli "github.com/opsgenie/opsgenie-go-sdk/client"
+	"github.com/opsgenie/opsgenie-go-sdk/userv2"
 )
 
 func main() {
@@ -16,18 +16,18 @@ func main() {
 
 	request := userv2.UpdateUserRequest{
 		Identifier: &userv2.Identifier{
-			ID: "1b4d54a9-7f07-44ef-9995-b2c0b1adc674",
+			ID:     "1b4d54a9-7f07-44ef-9995-b2c0b1adc674",
 			Expand: userv2.ContactExpandableField,
 		},
-		FullName: "Lex Luthor",
-		Role: &userv2.Role{Name:userv2.AdminRole},
+		FullName:      "Lex Luthor",
+		Role:          &userv2.Role{Name: userv2.AdminRole},
 		SkypeUsername: "lex.luthor",
-		Tags: &userv2.Tags{"updated"},
-		Details: &userv2.Details{"test": []string{"updated"}},
-		Locale: "de_CH",
-		Timezone: "US/Arizona",
+		Tags:          &userv2.Tags{"updated"},
+		Details:       &userv2.Details{"test": []string{"updated"}},
+		Locale:        "de_CH",
+		Timezone:      "US/Arizona",
 		UserAddress: &userv2.UserAddress{
-			City: "Phoenix",
+			City:  "Phoenix",
 			State: "Arizona",
 		},
 	}
