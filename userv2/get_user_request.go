@@ -1,6 +1,6 @@
 package userv2
 
-// GetUserRequest is a request for getting user
+// GetUserRequest is a request for getting user.
 type GetUserRequest struct {
 	*Identifier
 	ApiKey string

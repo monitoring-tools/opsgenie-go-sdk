@@ -25,6 +25,7 @@ const (
 	CreatedAtQueryField   = "createdAt"
 )
 
+// ListUsersRequest is a request for getting user list.
 type ListUsersRequest struct {
 	Limit  int
 	Offset int
@@ -34,6 +35,7 @@ type ListUsersRequest struct {
 	ApiKey string
 }
 
+// GenerateUrl generates API url for getting user list.
 func (request *ListUsersRequest) GenerateUrl() (string, url.Values, error) {
 	baseUrl := "/v2/users/"
 

@@ -12,7 +12,7 @@ func main() {
 	cli := new(ogcli.OpsGenieClient)
 	cli.SetAPIKey(constants.APIKey)
 
-	notificationCli, _ := cli.Notificationv2()
+	notificationCli, _ := cli.NotificationV2()
 
 	response, err := notificationCli.Disable(notificationv2.DisableNotificationRequest{
 		Identifier: &notificationv2.Identifier{

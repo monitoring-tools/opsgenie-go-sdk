@@ -12,7 +12,7 @@ func main() {
 	cli := new(ogcli.OpsGenieClient)
 	cli.SetAPIKey(constants.APIKey)
 
-	notificationCli, _ := cli.Notificationv2()
+	notificationCli, _ := cli.NotificationV2()
 
 	identifier := &notificationv2.Identifier{
 		UserID: "1f3328df-cb1f-4d0b-8588-f00ed6824b11",

@@ -278,6 +278,7 @@ func (cli *OpsGenieClient) ScheduleOverride() (*OpsGenieScheduleOverrideClient, 
 }
 
 // User instantiates a new OpsGenieUserClient.
+// Deprecated: Please use UserV2() method
 func (cli *OpsGenieClient) User() (*OpsGenieUserClient, error) {
 	cli.makeHTTPTransportSettings()
 
@@ -305,7 +306,8 @@ func (cli *OpsGenieClient) UserV2() (*OpsGenieUserV2Client, error) {
 	return userClient, nil
 }
 
-func (cli *OpsGenieClient) Notificationv2() (*OpsGenieNotificationV2Client, error) {
+// NotificationV2 instantiates a new OpsGenieNotificationV2Client
+func (cli *OpsGenieClient) NotificationV2() (*OpsGenieNotificationV2Client, error) {
 	cli.makeHTTPTransportSettings()
 
 	notificationClient := new(OpsGenieNotificationV2Client)

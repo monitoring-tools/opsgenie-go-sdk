@@ -10,12 +10,14 @@ const (
 	StatusActionDisable = "disable"
 )
 
+// Identifier defined the set of attributes for identification notification.
 type Identifier struct {
 	UserID     string `json:"-"`
 	RuleID string `json:"-"`
 	StatusAction string `json:"-"`
 }
 
+// GenerateUrl generates API url using specified attributes of identifier.
 func (request *Identifier) GenerateUrl() (string, url.Values, error) {
 	if request.UserID == "" {
 		return "", nil, errors.New("UserID should be provided")

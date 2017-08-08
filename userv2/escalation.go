@@ -1,6 +1,6 @@
 package userv2
 
-// Escalation is a struct of escalation
+// Escalation is a struct of escalation.
 type Escalation struct {
 	ID        string    `json:"id,omitempty"`
 	Name      string    `json:"name,omitempty"`
@@ -8,13 +8,13 @@ type Escalation struct {
 	Rules     []Rule    `json:"rules,omitempty"`
 }
 
-// OwnerTeam contains info about owner team of escalation
+// OwnerTeam contains info about owner team of escalation.
 type OwnerTeam struct {
 	ID   string `json:"id,omitempty"`
 	Name string `json:"name,omitempty"`
 }
 
-// Rule is a rule of escalation
+// Rule is a rule of escalation.
 type Rule struct {
 	Condition  string    `json:"condition,omitempty"`
 	NotifyType string    `json:"notifyType,omitempty"`
@@ -22,13 +22,13 @@ type Rule struct {
 	Recipient  Recipient `json:"recipient,omitempty"`
 }
 
-// Delay contains info about delaying alerts
+// Delay contains info about delaying alerts.
 type Delay struct {
 	TimeAmount int    `json:"timeAmount,omitempty"`
 	TimeUnit   string `json:"timeUnit,omitempty"`
 }
 
-// Recipient contains info about recipient of alerts
+// Recipient contains info about recipient of alerts.
 type Recipient struct {
 	ID   string `json:"id,omitempty"`
 	Name string `json:"name,omitempty"`

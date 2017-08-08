@@ -2,6 +2,7 @@ package userv2
 
 import "time"
 
+// User contains user data.
 type User struct {
 	ID           string        `json:"id,omitempty"`
 	Blocked      bool          `json:"blocked,omitempty"`

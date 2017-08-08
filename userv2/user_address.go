@@ -1,5 +1,6 @@
 package userv2
 
+// UserAddress contains data user user address.
 type UserAddress struct {
 	Country string `json:"country"`
 	State   string `json:"state"`

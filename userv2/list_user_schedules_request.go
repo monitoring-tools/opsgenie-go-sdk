@@ -1,5 +1,6 @@
 package userv2
 
+// ListUserSchedulesRequest is a request for getting list of user schedules.
 type ListUserSchedulesRequest struct {
 	*Identifier
 	ApiKey string

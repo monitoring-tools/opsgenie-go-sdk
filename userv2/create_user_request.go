@@ -2,7 +2,7 @@ package userv2
 
 import "net/url"
 
-// CreateUserRequest is a request for creating new user
+// CreateUserRequest is a request for creating new user.
 type CreateUserRequest struct {
 	UserName           string      `json:"username,omitempty"`
 	FullName           string      `json:"fullName,omitempty"`
@@ -17,7 +17,7 @@ type CreateUserRequest struct {
 	ApiKey             string
 }
 
-// GenerateUrl generates url to API endpoint
+// GenerateUrl generates url to API endpoint.
 func (r *CreateUserRequest) GenerateUrl() (string, url.Values, error) {
 	return "/v2/users", nil, nil
 }

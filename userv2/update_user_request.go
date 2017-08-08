@@ -1,5 +1,6 @@
 package userv2
 
+// UpdateUserRequest is a request for updating user.
 type UpdateUserRequest struct {
 	*Identifier
 	FullName      string       `json:"fullName,omitempty"`

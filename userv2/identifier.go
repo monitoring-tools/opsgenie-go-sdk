@@ -6,6 +6,7 @@ import (
 	"net/url"
 )
 
+// Identifier defined the set of attributes for identification user.
 type Identifier struct {
 	ID       string `json:"-"`
 	UserName string `json:"-"`
@@ -13,6 +14,7 @@ type Identifier struct {
 	Expand   string `json:"-"`
 }
 
+// GenerateUrl generates API url using specified attributes of identifier.
 func (request *Identifier) GenerateUrl() (string, url.Values, error) {
 	baseUrl := "/v2/users"
 
