@@ -9,14 +9,14 @@ import (
 )
 
 func main() {
-
 	cli := new(ogcli.OpsGenieClient)
 	cli.SetAPIKey(constants.APIKey)
 
 	notificationCli, _ := cli.Notificationv2()
 
 	identifier := &notificationv2.Identifier{
-		UserID: "4ca72bed-c1a9-40f8-a140-44cc957bf31a",
+		UserID: "1f3328df-cb1f-4d0b-8588-f00ed6824b11",
+		RuleID: "4fad3584-62cd-49d6-bc4f-c20457645211",
 	}
 
 	criteria := notificationv2.Criteria{
@@ -32,46 +32,32 @@ func main() {
 		},
 	}
 
+	startHour := 3
+	endHour := 15
+	startMin := 5
+	endMin := 30
+
 	timeRestriction := notificationv2.TimeRestriction{
 		Type: notificationv2.WeekendAndTimeOfDayTimeRestriction,
 		Restrictions: []notificationv2.Restriction{
 			{
 				StartDay:  notificationv2.Monday,
 				EndDay:    notificationv2.Friday,
-				StartHour: 3,
-				EndHour:   15,
-				StartMin:  5,
-				EndMin:    30,
+				StartHour: &startHour,
+				EndHour:   &endHour,
+				StartMin:  &startMin,
+				EndMin:    &endMin,
 			},
 		},
 	}
 
-	steps := []notificationv2.Step{
-		{
-			SendAfter: notificationv2.SendAfter{
-				TimeAmount: 1,
-				TimeUnit:   notificationv2.Minutes,
-			},
-			Contact: notificationv2.Contact{
-				Method: notificationv2.EmailNotifyMethod,
-				To:     "vlamug@gmail.com",
-			},
-			Enabled: true,
-		},
-	}
-
-	repeat := notificationv2.Repeat{Enabled: false}
-
-	response, err := notificationCli.Create(notificationv2.CreateNotificationRequest{
+	response, err := notificationCli.Update(notificationv2.UpdateNotificationRequest{
 		Identifier:      identifier,
-		Name:            "Test create-alert",
-		ActionType:      notificationv2.CreateAlertActionType,
+		Name:            "Test create-alert(changed)",
 		Criteria:        criteria,
 		TimeRestriction: timeRestriction,
-		Order:           1,
-		Steps:           steps,
-		Repeat:          repeat,
 		Enabled:         true,
+		Order:           2,
 	})
 	if err != nil {
 		fmt.Println(err.Error())
