@@ -19,12 +19,13 @@ type GetPolicyResponse struct {
 
 // GetPolicyResult is a result struct of getting policy
 type GetPolicyResult struct {
-	ID string `json:"id"`
-	Name string `json:"name"`
-	Type PolicyType `json:"type"`
-	PolicyDescription string `json:"policyDescription"`
-	Enabled bool `json:"enabled"`
-	Filter Filter `json:"filter"`
-	DeduplicationActionType string `json:"deduplication_action_type"`
-	Count int `json:"count"`
+	ID                      string      `json:"id"`
+	Name                    string      `json:"name"`
+	Type                    PolicyType  `json:"type"`
+	PolicyDescription       string      `json:"policyDescription"`
+	Recipients              []Recipient `json:"recipients,omitempty"`
+	Enabled                 bool        `json:"enabled"`
+	Filter                  Filter      `json:"filter"`
+	DeduplicationActionType string      `json:"deduplication_action_type"`
+	Count                   int         `json:"count"`
 }
