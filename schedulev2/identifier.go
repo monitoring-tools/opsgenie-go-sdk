@@ -16,7 +16,7 @@ func (request *Identifier) GenerateUrl() (string, url.Values, error) {
 		if len(request.ID) != 0 {
 			baseUrl += request.ID
 		} else if len(request.Name) != 0 {
-			baseUrl += request.Name
+			baseUrl += "ScheduleName?identifierType=" + request.Name
 		}
 	}
 
