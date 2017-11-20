@@ -342,6 +342,20 @@ func (cli *OpsGenieClient) ScheduleOverride() (*OpsGenieScheduleOverrideClient, 
 	return scheduleOverrideClient, nil
 }
 
+// OnCallsV2 instantiates a new OpsGenieOnCallsV2Client
+func (cli *OpsGenieClient) OnCallsV2() (*OpsGenieOnCallsV2Client, error) {
+	cli.makeHTTPTransportSettings()
+
+	onCallsV2Client := new(OpsGenieOnCallsV2Client)
+	onCallsV2Client.SetOpsGenieClient(*cli)
+
+	if cli.opsGenieAPIURL == "" {
+		onCallsV2Client.SetOpsGenieAPIUrl(endpointURL)
+	}
+
+	return onCallsV2Client, nil
+}
+
 // User instantiates a new OpsGenieUserClient.
 // Deprecated: Please use UserV2() method
 func (cli *OpsGenieClient) User() (*OpsGenieUserClient, error) {
